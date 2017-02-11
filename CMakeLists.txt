@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+project(cpp_practice)
+find_package(GTest REQUIRED)
+include(CTest)
+enable_testing()
+add_subdirectory(fibonacci)
+add_subdirectory(bit_counter)
