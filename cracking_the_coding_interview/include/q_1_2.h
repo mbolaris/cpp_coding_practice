@@ -5,8 +5,8 @@
  *
  */
 
-#ifndef CRACKING_THE_CODING_INTERVIEW_INCLUDE_Q_1_1_H_
-#define CRACKING_THE_CODING_INTERVIEW_INCLUDE_Q_1_1_H_
+#ifndef CRACKING_THE_CODING_INTERVIEW_INCLUDE_Q_1_2_H_
+#define CRACKING_THE_CODING_INTERVIEW_INCLUDE_Q_1_2_H_
 
 #include <string>
 
@@ -14,4 +14,4 @@ namespace q_1_2 {
     bool isPermutation(const std::string &strA, const std::string &strB);
 };
 
-#endif /* CRACKING_THE_CODING_INTERVIEW_INCLUDE_Q_1_1_H_ */
+#endif /* CRACKING_THE_CODING_INTERVIEW_INCLUDE_Q_1_2_H_ */
