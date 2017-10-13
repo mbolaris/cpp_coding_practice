@@ -29,7 +29,7 @@ namespace q_1_1 {
     }
 
     bool isUniqueBitsetImp(const std::string &str) {
-        std::bitset<128> seen;
+        std::bitset<256> seen;
         for (char character : str) {
             if (seen[static_cast<int>(character)]) {
                 return false;
