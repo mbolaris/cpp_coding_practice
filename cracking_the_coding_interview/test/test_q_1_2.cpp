@@ -18,8 +18,3 @@ TEST(q_1_2, isPermutation) {
 }
 
 
-// int main(int argc, char **argv) {
-//    testing::InitGoogleTest(&argc, argv);
-//    return RUN_ALL_TESTS();
-//}
-
