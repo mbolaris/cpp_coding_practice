@@ -21,12 +21,12 @@ namespace q_1_2 {
         int charCounts[128] = {0};
 
         for (char character : strA) {
-            charCounts[character]++;
+            charCounts[(unsigned char)character]++;
         }
 
         for (char character : strB) {
-            charCounts[character]--;
-            if (charCounts[character] < 0) {
+            charCounts[(unsigned char)character]--;
+            if (charCounts[(unsigned char)character] < 0) {
                 return false;
             }
         }

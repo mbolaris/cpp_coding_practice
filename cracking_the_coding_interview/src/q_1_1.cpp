@@ -18,10 +18,10 @@ namespace q_1_1 {
         bool seen[256] = {false};
         const char* c = str;
         while (*c) {
-            if (seen[*c]) {
+            if (seen[(unsigned char)*c]) {
                 return false;
             } else {
-                seen[*c] = true;
+                seen[(unsigned char)*c] = true;
                 c++;
             }
         }
