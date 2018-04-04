@@ -11,7 +11,7 @@
 #include <string>
 
 namespace q_1_3 {
-    bool urlify(char str[]);
+    void urlify(char str[]);
 };
 
 #endif /* CRACKING_THE_CODING_INTERVIEW_INCLUDE_Q_1_3_H_ */
