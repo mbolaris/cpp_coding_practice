@@ -18,7 +18,7 @@ public:
     static int64_t tabulation(int n);
 
 private:
-    static int64_t memoized(int n, std::vector<int64_t>* pCache);
+    static int64_t memoized(int n, std::vector<int64_t>& cache);
 };
 
 #endif /* FIBONACCI_INCLUDE_FIBONACCI_H_ */
