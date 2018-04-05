@@ -27,11 +27,15 @@ TEST(Fibonacci, memoized) {
     EXPECT_EQ(Fibonacci::memoized(4), 3);
     EXPECT_EQ(Fibonacci::memoized(5), 5);
     EXPECT_EQ(Fibonacci::memoized(25), 75025);
+    EXPECT_EQ(Fibonacci::memoized(40), 102334155);
+}
 
+TEST(Fibonacci, memoized_40x1000000) {
     for (int i = 0; i < 100000; i++) {
         EXPECT_EQ(Fibonacci::memoized(40), 102334155);
     }
 }
+
 
 TEST(Fibonacci, tabulation) {
     EXPECT_EQ(Fibonacci::tabulation(0), 0);
@@ -41,7 +45,10 @@ TEST(Fibonacci, tabulation) {
     EXPECT_EQ(Fibonacci::tabulation(4), 3);
     EXPECT_EQ(Fibonacci::tabulation(5), 5);
     EXPECT_EQ(Fibonacci::tabulation(25), 75025);
+    EXPECT_EQ(Fibonacci::tabulation(40), 102334155);
+}
 
+TEST(Fibonacci, tabulation_40x1000000) {
     for (int i = 0; i < 100000; i++) {
         EXPECT_EQ(Fibonacci::tabulation(40), 102334155);
     }
