@@ -7,6 +7,8 @@ enable_language(CXX)
 
 find_package(Threads REQUIRED)
 
+set(CMAKE_CXX_STANDARD 14)
+
 if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
     set(CMAKE_CXX_FLAGS         "-Wall -Wno-unknown-pragmas -Wno-sign-compare -Woverloaded-virtual -Wwrite-strings -Wno-unused")
     set(CMAKE_CXX_FLAGS_DEBUG   "-O0 -g3")
@@ -19,12 +21,6 @@ endif()
 #-------------------
 set(COMMON_INCLUDES ${PROJECT_SOURCE_DIR}/include)
 
-#-------------------
-# Module source
-#-------------------
-set(PROJECT_LIB_NAME ${PROJECT_NAME_STR}_impl)
-file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
-add_library(${PROJECT_LIB_NAME} ${SRC_FILES})
 
 #-------------------
 # Test
@@ -35,6 +31,6 @@ include_directories(${GTEST_INCLUDE_DIRS} ${COMMON_INCLUDES})
 file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 add_executable(${PROJECT_TEST_NAME} ${TEST_SRC_FILES})
-target_link_libraries(${PROJECT_TEST_NAME} ${GTEST_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${PROJECT_LIB_NAME})
+target_link_libraries(${PROJECT_TEST_NAME} ${GTEST_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
 add_test(unit ${PROJECT_TEST_NAME})

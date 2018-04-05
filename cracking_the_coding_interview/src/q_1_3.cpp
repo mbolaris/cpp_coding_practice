@@ -13,7 +13,7 @@
 
 namespace q_1_3 {
 
-    bool urlify(char str[]) {
+    void urlify(char str[]) {
         int newLen = strlen(str);
 
         for (int i = 0; i < strlen(str); i++) {

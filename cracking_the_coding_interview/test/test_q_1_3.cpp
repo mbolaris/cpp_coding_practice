@@ -13,8 +13,6 @@ TEST(q_1_3, urlify) {
 
     q_1_3::urlify(input);
 
-    std::cout << input << std::endl;
-
     EXPECT_EQ(strcmp(input, "ab%20cd"), 0);
 }
 

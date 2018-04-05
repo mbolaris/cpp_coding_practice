@@ -1,23 +1,30 @@
 /*
- * bit_countier.h
+ * bit_counter.h
  *
  *  Copyright 2017 Bolaris Engineering
  *
  */
 
-#ifndef CPP_BIT_COUNTER_INCLUDE_BIT_COUNTER_H_
-#define CPP_BIT_COUNTER_INCLUDE_BIT_COUNTER_H_
+#ifndef BIT_COUNTER_INCLUDE_BIT_COUNTER_H_
+#define BIT_COUNTER_INCLUDE_BIT_COUNTER_H_
 
-int CountBits(int i);
+namespace BitCounter {
+    constexpr int countBitsSlow(unsigned int value) {
+        int bitCount = 0;
+        while (value > 0) {
+            if (value & 1) {
+                bitCount++;
+            }
+            value >>= 1;
+        }
+        return bitCount;
+    }
 
-class BitCounter {
- public:
-    static int countBitsSlow(unsigned int value);
-    static int countBitsCached(unsigned int value);
-    static int countBitsFast(unsigned int value);
- private:
-    static int* getBitTabel();
-    static int* pBitTable;
-};
+    constexpr int countBitsFast(unsigned int value) {
+        value = value - ((value >> 1) & 0x55555555);
+        value = (value & 0x33333333) + ((value >> 2) & 0x33333333);
+        return (((value + (value >> 4)) & 0x0F0F0F0F) * 0x01010101) >> 24;
+    }
+};  // namespace BitCounter
 
-#endif /* CPP_BIT_COUNTER_INCLUDE_BIT_COUNTER_H_ */
+#endif  // BIT_COUNTER_INCLUDE_BIT_COUNTER_H_
