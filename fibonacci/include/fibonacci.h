@@ -11,14 +11,27 @@
 #include <stdint.h>
 #include <vector>
 
-class Fibonacci {
-public:
-    static int64_t naive(int n);
-    static int64_t memoized(int n);
-    static int64_t tabulation(int n);
+namespace Fibonacci {
+int64_t naive(int n);
+int64_t memoized(int n);
+constexpr int64_t tabulation(int n) {
+	int64_t first = 0;
+	int64_t second = 1;
+	int64_t next = 0;
 
-private:
-    static int64_t memoized(int n, std::vector<int64_t>& cache);
-};
+	if (n < 1) {
+		return first;
+	} else if (n == 1) {
+		return second;
+	} else {
+		for (int i = 2; i <= n; i++) {
+			next = first + second;
+			first = second;
+			second = next;
+		}
+	}
+	return second;
+}
+}
 
 #endif /* FIBONACCI_INCLUDE_FIBONACCI_H_ */
