@@ -1,4 +1,7 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 project(cpp_practice)
 find_package(GTest REQUIRED)
 include(CTest)
@@ -7,3 +10,4 @@ set(CMAKE_CXX_STANDARD 14)
 add_subdirectory(fibonacci)
 add_subdirectory(bit_counter)
 add_subdirectory(cracking_the_coding_interview)
+
