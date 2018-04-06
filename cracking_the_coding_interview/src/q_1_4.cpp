@@ -13,7 +13,7 @@
  */
 
 #include <unordered_map>
-#include <string>
+#include <cstring>
 
 #include "../include/q_1_4.h"
 

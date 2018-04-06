@@ -10,11 +10,11 @@
 #include <vector>
 
 namespace Fibonacci {
-
 static int64_t memoized(int n, std::vector<int64_t>& cache) {
     if (n < 1) {
         return 0;
-    } else if (n == 1) {
+    }
+    if (n == 1) {
         cache[n] = 1;
     } else if (cache[n] == 0) {
         cache[n] = memoized(n - 1, cache) + memoized(n - 2, cache);
@@ -30,11 +30,10 @@ int64_t memoized(int n) {
 int64_t naive(int n) {
     if (n < 1) {
         return 0;
-    } else if (n == 1) {
-        return 1;
-    } else {
-        return (naive(n - 1) + naive(n - 2));
     }
+    if (n == 1) {
+        return 1;
+    }
+    return (naive(n - 1) + naive(n - 2));
 }
-
 }  // namespace Fibonacci

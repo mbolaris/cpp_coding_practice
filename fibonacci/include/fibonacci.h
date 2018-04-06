@@ -5,8 +5,8 @@
  *
  */
 
-#ifndef FIBONACCI_INCLUDE_FIBONACCI_H_
-#define FIBONACCI_INCLUDE_FIBONACCI_H_
+#ifndef FIBONACCI_H_
+#define FIBONACCI_H_
 
 #include <stdint.h>
 #include <vector>
@@ -24,18 +24,21 @@ constexpr int64_t tabulation(int n) {
 
     if (n < 1) {
         return first;
-    } else if (n == 1) {
-        return second;
-    } else {
-        for (int i = 2; i <= n; i++) {
-            next = first + second;
-            first = second;
-            second = next;
-        }
     }
+
+    if (n == 1) {
+        return second;
+    }
+
+	for (int i = 2; i <= n; i++) {
+		next = first + second;
+		first = second;
+		second = next;
+	}
+
     return second;
 }
 
 }  // namespace Fibonacci
 
-#endif  // FIBONACCI_INCLUDE_FIBONACCI_H_
+#endif  // FIBONACCI_H_

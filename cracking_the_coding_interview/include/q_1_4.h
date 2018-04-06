@@ -5,13 +5,13 @@
  *
  */
 
-#ifndef CRACKING_THE_CODING_INTERVIEW_INCLUDE_Q_1_4_H_
-#define CRACKING_THE_CODING_INTERVIEW_INCLUDE_Q_1_4_H_
+#ifndef Q_1_4_H_
+#define Q_1_4_H_
 
 #include <string>
 
 namespace q_1_4 {
     bool isPalindromePermutation(std::string str);
-};
+}  // namespace q_1_4
 
-#endif /* CRACKING_THE_CODING_INTERVIEW_INCLUDE_Q_1_4_H_ */
+#endif /* Q_1_4_H_ */

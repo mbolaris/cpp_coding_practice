@@ -9,7 +9,7 @@
  */
 
 #include "../include/q_1_1.h"
-#include <string>
+#include <cstring>
 #include <bitset>
 
 namespace q_1_1 {
@@ -17,13 +17,12 @@ namespace q_1_1 {
     bool isUniqueArrayImp(const char* str) {
         bool seen[256] = {false};
         const char* c = str;
-        while (*c) {
-            if (seen[(unsigned char)*c]) {
+        while (*c != 0) {
+            if (seen[static_cast<unsigned char>(*c)]) {
                 return false;
-            } else {
-                seen[(unsigned char)*c] = true;
-                c++;
             }
+			seen[static_cast<unsigned char>(*c)] = true;
+			c++;
         }
         return true;
     }
@@ -33,9 +32,8 @@ namespace q_1_1 {
         for (char character : str) {
             if (seen[static_cast<int>(character)]) {
                 return false;
-            } else {
-                seen.flip(static_cast<int>(character));
             }
+            seen.flip(static_cast<int>(character));
         }
         return true;
     }

@@ -8,10 +8,9 @@
  */
 
 #include "../include/q_1_2.h"
-#include <string>
+#include <cstring>
 
 namespace q_1_2 {
-
     bool isPermutation(const std::string &strA, const std::string &strB) {
         if (strA.length() != strB.length()) {
             return false;
@@ -32,6 +31,5 @@ namespace q_1_2 {
         }
         return true;
     }
-
 }  // namespace q_1_2
 

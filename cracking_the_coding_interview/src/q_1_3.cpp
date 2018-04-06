@@ -13,7 +13,6 @@
 #include "../include/q_1_3.h"
 
 namespace q_1_3 {
-
     void urlify(char str[]) {
         int newLen = strlen(str);
 
