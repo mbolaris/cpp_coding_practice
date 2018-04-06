@@ -8,16 +8,16 @@
 #include "../include/q_1_1.h"
 #include "gtest/gtest.h"
 
-TEST(q_1_1, isUniqueArrayImp) {
-    EXPECT_EQ(q_1_1::isUniqueArrayImp("abcd"), true);
-    EXPECT_EQ(q_1_1::isUniqueArrayImp("abca"), false);
-    EXPECT_EQ(q_1_1::isUniqueArrayImp("KaiBolarisIsAwesome!"), false);
+TEST(q_1_1, IsUniqueArrayImp) {
+    EXPECT_EQ(q_1_1::IsUniqueArrayImp("abcd"), true);
+    EXPECT_EQ(q_1_1::IsUniqueArrayImp("abca"), false);
+    EXPECT_EQ(q_1_1::IsUniqueArrayImp("KaiBolarisIsAwesome!"), false);
 }
 
-TEST(q_1_1, isUniqueBitsetImp) {
-    EXPECT_EQ(q_1_1::isUniqueBitsetImp("abcd"), true);
-    EXPECT_EQ(q_1_1::isUniqueBitsetImp("abca"), false);
-    EXPECT_EQ(q_1_1::isUniqueBitsetImp("KaiBolarisIsAwesome!"), false);
+TEST(q_1_1, IsUniqueBitsetImp) {
+    EXPECT_EQ(q_1_1::IsUniqueBitsetImp("abcd"), true);
+    EXPECT_EQ(q_1_1::IsUniqueBitsetImp("abca"), false);
+    EXPECT_EQ(q_1_1::IsUniqueBitsetImp("KaiBolarisIsAwesome!"), false);
 }
 
 int main(int argc, char **argv) {

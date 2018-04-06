@@ -14,7 +14,7 @@
 
 namespace q_1_1 {
 
-    bool isUniqueArrayImp(const char* str) {
+    bool IsUniqueArrayImp(const char* str) {
         bool seen[256] = {false};
         const char* c = str;
         while (*c != 0) {
@@ -27,7 +27,7 @@ namespace q_1_1 {
         return true;
     }
 
-    bool isUniqueBitsetImp(const std::string &str) {
+    bool IsUniqueBitsetImp(const std::string &str) {
         std::bitset<256> seen;
         for (char character : str) {
             if (seen[static_cast<int>(character)]) {

@@ -9,7 +9,7 @@
 #include "../include/fibonacci.h"
 #include <vector>
 
-namespace Fibonacci {
+namespace fibonacci {
 static int64_t memoized(int n, std::vector<int64_t>& cache) {
     if (n < 1) {
         return 0;
@@ -22,18 +22,18 @@ static int64_t memoized(int n, std::vector<int64_t>& cache) {
     return cache[n];
 }
 
-int64_t memoized(int n) {
+int64_t Memoized(int n) {
     std::vector<int64_t> cache(n + 1, 0);
     return memoized(n, cache);
 }
 
-int64_t naive(int n) {
+int64_t Naive(int n) {
     if (n < 1) {
         return 0;
     }
     if (n == 1) {
         return 1;
     }
-    return (naive(n - 1) + naive(n - 2));
+    return (Naive(n - 1) + Naive(n - 2));
 }
 }  // namespace Fibonacci

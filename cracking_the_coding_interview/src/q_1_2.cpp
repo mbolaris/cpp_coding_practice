@@ -11,7 +11,7 @@
 #include <cstring>
 
 namespace q_1_2 {
-    bool isPermutation(const std::string &strA, const std::string &strB) {
+    bool IsPermutation(const std::string &strA, const std::string &strB) {
         if (strA.length() != strB.length()) {
             return false;
         }

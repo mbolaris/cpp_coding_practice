@@ -11,13 +11,12 @@
 #include <stdint.h>
 #include <vector>
 
-namespace Fibonacci {
+namespace fibonacci {
+int64_t Naive(int n);
 
-int64_t naive(int n);
+int64_t Memoized(int n);
 
-int64_t memoized(int n);
-
-constexpr int64_t tabulation(int n) {
+constexpr int64_t Tabulation(int n) {
     int64_t first = 0;
     int64_t second = 1;
     int64_t next = 0;
@@ -25,20 +24,17 @@ constexpr int64_t tabulation(int n) {
     if (n < 1) {
         return first;
     }
-
     if (n == 1) {
         return second;
     }
-
-	for (int i = 2; i <= n; i++) {
-		next = first + second;
-		first = second;
-		second = next;
-	}
-
+    for (int i = 2; i <= n; i++) {
+        next = first + second;
+        first = second;
+        second = next;
+    }
     return second;
 }
 
-}  // namespace Fibonacci
+}  // namespace fibonacci
 
 #endif  // FIBONACCI_H_

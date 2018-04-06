@@ -11,7 +11,7 @@
 #include <string>
 
 namespace q_1_3 {
-    void urlify(char str[]);
+void Urlify(char str[]);
 }  // namespace q_1_3
 
 #endif /* Q_1_3_H_ */

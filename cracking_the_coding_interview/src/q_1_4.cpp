@@ -19,7 +19,7 @@
 
 namespace q_1_4 {
 
-bool isPalindromePermutation(std::string str) {
+bool IsPalindromePermutation(std::string str) {
     std::unordered_map<char, int> charCounts;
     int oddCount = 0;
     for (char c : str) {

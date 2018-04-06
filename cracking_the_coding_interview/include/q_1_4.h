@@ -11,7 +11,7 @@
 #include <string>
 
 namespace q_1_4 {
-    bool isPalindromePermutation(std::string str);
+bool IsPalindromePermutation(std::string str);
 }  // namespace q_1_4
 
 #endif /* Q_1_4_H_ */
