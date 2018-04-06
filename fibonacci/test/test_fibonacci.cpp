@@ -30,13 +30,13 @@ TEST(fibonacci, Memoized) {
     EXPECT_EQ(fibonacci::Memoized(40), 102334155);
 }
 
-TEST(fibonacci, memoized_25x10000000) {
+TEST(fibonacci, memoized_25x1000000) {
     for (int i = 0; i < 1000000; i++) {
         EXPECT_EQ(fibonacci::Memoized(25), 75025);
     }
 }
 
-TEST(fibonacci, memoized_40x10000000) {
+TEST(fibonacci, memoized_40x1000000) {
     for (int i = 0; i < 1000000; i++) {
         EXPECT_EQ(fibonacci::Memoized(40), 102334155);
     }
@@ -53,14 +53,14 @@ TEST(fibonacci, Tabulation) {
     EXPECT_EQ(fibonacci::Tabulation(40), 102334155);
 }
 
-TEST(fibonacci, tabulation_25x10000000) {
-    for (int i = 0; i < 1000000; i++) {
+TEST(fibonacci, tabulation_25x1000000) {
+    for (int i = 0; i < 100000; i++) {
         EXPECT_EQ(fibonacci::Tabulation(25), 75025);
     }
 }
 
-TEST(fibonacci, tabulation_40x10000000) {
-    for (int i = 0; i < 1000000; i++) {
+TEST(fibonacci, tabulation_40x1000000) {
+    for (int i = 0; i < 100000; i++) {
         EXPECT_EQ(fibonacci::Tabulation(40), 102334155);
     }
 }
@@ -69,5 +69,4 @@ int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
-
 
