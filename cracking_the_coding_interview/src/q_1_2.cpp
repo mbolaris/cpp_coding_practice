@@ -8,7 +8,7 @@
  */
 
 #include "../include/q_1_2.h"
-#include <cstring>
+#include <string>
 
 namespace q_1_2 {
     bool IsPermutation(const std::string &strA, const std::string &strB) {
@@ -20,12 +20,12 @@ namespace q_1_2 {
         int charCounts[128] = {0};
 
         for (char character : strA) {
-            charCounts[(unsigned char)character]++;
+            charCounts[static_cast<unsigned char>(character)]++;
         }
 
         for (char character : strB) {
-            charCounts[(unsigned char)character]--;
-            if (charCounts[(unsigned char)character] < 0) {
+            charCounts[static_cast<unsigned char>(character)]--;
+            if (charCounts[static_cast<unsigned char>(character)] < 0) {
                 return false;
             }
         }
