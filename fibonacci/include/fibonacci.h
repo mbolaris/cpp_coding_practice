@@ -34,7 +34,6 @@ constexpr int64_t Tabulation(int n) {
     }
     return second;
 }
-
 }  // namespace fibonacci
 
 #endif  // FIBONACCI_H_

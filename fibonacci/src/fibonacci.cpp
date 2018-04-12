@@ -36,4 +36,4 @@ int64_t Naive(int n) {
     }
     return (Naive(n - 1) + Naive(n - 2));
 }
-}  // namespace Fibonacci
+}  // namespace fibonacci

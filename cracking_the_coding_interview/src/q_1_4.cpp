@@ -13,14 +13,14 @@
  */
 
 #include <unordered_map>
-#include <cstring>
+#include <string>
 
 #include "../include/q_1_4.h"
 
 namespace q_1_4 {
 
 bool IsPalindromePermutation(std::string str) {
-    std::unordered_map<char, int> charCounts;
+    std::unordered_map<int, int> charCounts;
     int oddCount = 0;
     for (char c : str) {
         if (isalpha(c)) {

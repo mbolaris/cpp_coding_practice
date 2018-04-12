@@ -9,34 +9,31 @@
  */
 
 #include "../include/q_1_1.h"
-#include <cstring>
+#include <string>
 #include <bitset>
 
 namespace q_1_1 {
-
-    bool IsUniqueArrayImp(const char* str) {
-        bool seen[256] = {false};
-        const char* c = str;
-        while (*c != 0) {
-            if (seen[static_cast<unsigned char>(*c)]) {
-                return false;
-            }
-			seen[static_cast<unsigned char>(*c)] = true;
-			c++;
+bool IsUniqueArrayImp(const char* str) {
+    bool seen[256] = {false};
+    const char* c = str;
+    while (*c != 0) {
+        if (seen[static_cast<unsigned char>(*c)]) {
+            return false;
         }
-        return true;
+        seen[static_cast<unsigned char>(*c)] = true;
+        c++;
     }
+    return true;
+}
 
-    bool IsUniqueBitsetImp(const std::string &str) {
-        std::bitset<256> seen;
-        for (char character : str) {
-            if (seen[static_cast<int>(character)]) {
-                return false;
-            }
-            seen.flip(static_cast<int>(character));
+bool IsUniqueBitsetImp(const std::string& str) {
+    std::bitset<256> seen;
+    for (char character : str) {
+        if (seen[static_cast<int>(character)]) {
+            return false;
         }
-        return true;
+        seen.flip(static_cast<int>(character));
     }
-
+    return true;
+}
 }  // namespace q_1_1
-

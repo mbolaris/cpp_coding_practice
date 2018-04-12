@@ -10,7 +10,7 @@
  */
 
 #include "../include/q_1_3.h"
-#include <cstring>
+#include <string>
 
 namespace q_1_3 {
 void Urlify(char str[]) {
@@ -24,7 +24,7 @@ void Urlify(char str[]) {
 
     size_t writeIndex = newLen - 1;
 
-    for (int i = strlen(str) - 1; i >= 0; i--) {
+    for (int i = static_cast<int>(strlen(str)) - 1; i >= 0; i--) {
         if (str[i] == ' ') {
             str[writeIndex--] = '0';
             str[writeIndex--] = '2';
