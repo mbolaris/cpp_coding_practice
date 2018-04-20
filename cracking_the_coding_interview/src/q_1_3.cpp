@@ -1,5 +1,5 @@
 /*
- * q_1_3.h
+ * q_1_3.cpp
  *
  *  Copyright 2017 Bolaris Engineering
  *
