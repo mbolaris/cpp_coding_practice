@@ -8,7 +8,7 @@
 #include "../include/q_1_5.h"
 #include "gtest/gtest.h"
 
-TEST(q_1_5, IsPalindromePermutation) {
+TEST(q_1_5, IsOneEditAway) {
     EXPECT_EQ(q_1_5::IsOneEditAway("", ""), true);
     EXPECT_EQ(q_1_5::IsOneEditAway("X", ""), true);
     EXPECT_EQ(q_1_5::IsOneEditAway("pale", "ple"), true);

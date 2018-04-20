@@ -9,35 +9,33 @@
 #define Q_1_5_H_
 
 #include <string>
-#include<iostream>
 
 namespace q_1_5 {
-bool IsOneEditAway(const std::string& str1, const std::string& str2) {
+constexpr bool IsOneEditAway(const std::string& str1, const std::string& str2) {
     if ((str1.length() < str2.length()) ? (str2.length() - str1.length())
                                         : (str1.length() - str2.length()) > 1) {
         return false;
     }
 
     int diffs = 0;
-    auto c1 = str1.begin();
-    auto c2 = str2.begin();
-    while (c1 != str1.end() && c2 != str2.end()) {
-        if (*c1 == *c2) {
-            c1++;
-            c2++;
+    size_t i = 0;
+    size_t j = 0;
+    while (i < str1.length() && j < str2.length()) {
+        if (str1[i] == str2[j]) {
+           i++;
+           j++;
         } else {
             diffs++;
             if (diffs > 1) {
                 return false;
             }
-
             if (str1.length() == str2.length()) {
-                c1++;
-                c2++;
+                i++;
+                j++;
             } else if (str1.length() > str2.length()) {
-                c1++;
+                i++;
             } else {
-                c2++;
+                j++;
             }
         }
     }
