@@ -16,35 +16,29 @@
 namespace q_1_6 {
 
 std::string Compress(const std::string& str) {
-    bool startedCompressing = false;
     int runLength = 0;
     char lastChar = str[0];
     std::string newString;
 
-    for (auto i = 0; i < str.length(); i++) {
+    for (size_t i = 0; i < str.length(); i++) {
         if (str[i] == lastChar) {
             runLength++;
         } else {
-            if (runLength > 2) {
-                if (!startedCompressing) {
-                    startedCompressing = true;
-                    newString += str.substr(0, i - runLength + 1);
-                } else {
-                	newString += str[i - runLength + 1];
-                }
-                newString += std::to_string(runLength);
-            }
-
-            runLength = 0;
+            newString += str[i - runLength];
+            newString += std::to_string(runLength);
+            runLength = 1;
         }
+        lastChar  = str[i];
     }
 
-    if (startedCompressing) {
-    	return newString;
+    newString += str[str.length() - runLength];
+    newString += std::to_string(runLength);
+
+    if (newString.length() < str.length()) {
+        return newString;
     } else {
         return str;
     }
-
 }
 
 }  // namespace q_1_6
