@@ -11,7 +11,7 @@
 #include <string>
 
 namespace q_1_5 {
-constexpr bool IsOneEditAway(const std::string& str1, const std::string& str2) {
+bool IsOneEditAway(const std::string& str1, const std::string& str2) {
     if ((str1.length() < str2.length()) ? (str2.length() - str1.length())
                                         : (str1.length() - str2.length()) > 1) {
         return false;
